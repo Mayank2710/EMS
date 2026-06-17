@@ -1,0 +1,56 @@
+.attendance-page {
+  width: 100%;
+}
+
+.attendance-page h1 {
+  margin-bottom: 20px;
+}
+
+.attendance-form {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 25px;
+}
+
+.attendance-form select {
+  flex: 1;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+}
+
+.attendance-form button {
+  background: #2563eb;
+  color: white;
+  border: none;
+  padding: 12px 18px;
+  border-radius: 8px;
+}
+
+.attendance-list {
+  display: grid;
+  grid-template-columns:
+    repeat(
+      auto-fill,
+      minmax(300px, 1fr)
+    );
+  gap: 20px;
+}
+
+.attendance-card {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow:
+    0 2px 10px
+      rgba(0, 0, 0, 0.08);
+}
+
+.attendance-card button {
+  margin-top: 10px;
+  background: green;
+  color: white;
+  border: none;
+  padding: 10px 14px;
+  border-radius: 8px;
+}
