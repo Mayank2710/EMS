@@ -51,6 +51,23 @@ function Sidebar() {
               Leave
             </Link>
           </li>
+
+          {(role === "ADMIN" ||
+            role === "HR") && (
+            <li>
+              <Link to="/payrolls">
+                Payroll
+              </Link>
+            </li>
+          )}
+
+          {role === "EMPLOYEE" && (
+            <li>
+              <Link to="/my-payroll">
+                My Payroll
+              </Link>
+            </li>
+          )}
         </ul>
       </nav>
     </aside>

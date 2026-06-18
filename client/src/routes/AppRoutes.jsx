@@ -14,6 +14,9 @@ import EmployeePage from "../modules/employee/EmployeePage";
 import AttendancePage from "../modules/attendance/AttendancePage";
 import LeavePage from "../modules/leave/LeavePage";
 
+import PayrollPage from "../modules/payroll/PayrollPage";
+import MyPayrollPage from "../modules/payroll/MyPayrollPage";
+
 import ProtectedRoute from "./ProtectedRoute";
 
 function AppRoutes() {
@@ -104,6 +107,33 @@ function AppRoutes() {
               ]}
             >
               <LeavePage />
+            </ProtectedRoute>
+          }
+        />
+
+        <Route
+          path="/payrolls"
+          element={
+            <ProtectedRoute
+              allowedRoles={[
+                "ADMIN",
+                "HR",
+              ]}
+            >
+              <PayrollPage />
+            </ProtectedRoute>
+          }
+        />
+
+        <Route
+          path="/my-payroll"
+          element={
+            <ProtectedRoute
+              allowedRoles={[
+                "EMPLOYEE",
+              ]}
+            >
+              <MyPayrollPage />
             </ProtectedRoute>
           }
         />
