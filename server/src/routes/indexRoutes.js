@@ -5,6 +5,8 @@ import departmentRoutes from "../modules/department/departmentRoutes.js";
 import employeeRoutes from "../modules/employee/employeeRoutes.js";
 import attendanceRoutes from "../modules/attendance/attendanceRoutes.js";
 import leaveRoutes from "../modules/leave/leaveRoutes.js";
+import payrollRoutes from "../modules/payroll/payrollRoutes.js";
+import dashboardRoutes from "../modules/dashboard/dashboardRoutes.js";
 
 const router = Router();
 
@@ -27,7 +29,7 @@ router.get(
 
 /*
 |--------------------------------------------------------------------------
-| Auth Routes
+| Module Routes
 |--------------------------------------------------------------------------
 */
 
@@ -36,48 +38,34 @@ router.use(
   authRoutes
 );
 
-/*
-|--------------------------------------------------------------------------
-| Department Routes
-|--------------------------------------------------------------------------
-*/
+router.use(
+  "/dashboard",
+  dashboardRoutes
+);
 
 router.use(
   "/departments",
   departmentRoutes
 );
 
-/*
-|--------------------------------------------------------------------------
-| Employee Routes
-|--------------------------------------------------------------------------
-*/
-
 router.use(
   "/employees",
   employeeRoutes
 );
-
-/*
-|--------------------------------------------------------------------------
-| Attendance Routes
-|--------------------------------------------------------------------------
-*/
 
 router.use(
   "/attendance",
   attendanceRoutes
 );
 
-/*
-|--------------------------------------------------------------------------
-| Leave Routes
-|--------------------------------------------------------------------------
-*/
-
 router.use(
   "/leaves",
   leaveRoutes
+);
+
+router.use(
+  "/payrolls",
+  payrollRoutes
 );
 
 export default router;
